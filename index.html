@@ -26,7 +26,7 @@
     <p class="title-sub">How to use AI in Sales Tax and VAT Compliance?</p>
   </div>
   <div class="title-byline">
-    <div class="title-author">Aleksandra Bal, Erich Rentz</div>
+    <div class="title-author">Aleksandra Bal & Erich Rentz</div>
     <div class="title-company">Stripe</div>
     <div class="title-date">26 October 2026</div>
   </div>
@@ -37,6 +37,19 @@
   </svg>
 </section>
 
+<!-- ============ AGENDA ============ -->
+<section id="agenda" class="wash">
+  <h2 class="slide-title">Agenda</h2>
+  <div class="slide-body">
+    <ol class="agenda">
+      <li><span class="agenda-n">1</span><span class="agenda-part">Background</span></li>
+      <li><span class="agenda-n">2</span><span class="agenda-part">Can AI determine the sales tax rate?</span></li>
+      <li><span class="agenda-n">3</span><span class="agenda-part">General-purpose AI for indirect tax research</span></li>
+      <li><span class="agenda-n">4</span><span class="agenda-part">Agents</span></li>
+    </ol>
+  </div>
+</section>
+
 <!-- ============ 2. LANDSCAPE ============ -->
 <section id="landscape">
   <h2 class="slide-title">Where AI Actually Is Right Now</h2>
@@ -45,77 +58,147 @@
       <li>New models every week</li>
       <li>Open-weight models: good enough, far cheaper</li>
       <li>From assistive to autonomous</li>
-      <li>AGI: forecasts vary by decades</li>
+      <li>From seats to usage: AI is increasingly metered</li>
     </ul>
   </div>
 </section>
 
-<!-- ============ 3. PROFESSIONAL IMPACT ============ -->
-<section id="faster">
-  <h2 class="slide-title">We Got Faster. We Didn't Get Freer.</h2>
+<!-- ============ 3. SAME AI, DIFFERENT BLIND SPOTS ============ -->
+<section id="blind-spots">
+  <h2 class="slide-title">Same AI, Different Blind Spots</h2>
   <div class="slide-body">
-    <ul class="bullets five">
-      <li>Keeping up with AI is a second job</li>
-      <li>Real gains: drafting, summarizing, research</li>
-      <li>More output, not more time</li>
-      <li>AI slop: unreviewed drafts passed on</li>
-    </ul>
+    <div class="table-block">
+      <table class="compare">
+        <caption class="sr-only">Where VAT and US sales tax differ, and where AI cannot do the work</caption>
+        <colgroup>
+          <col class="col-label">
+          <col>
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"><span class="col-head"><svg class="flag" viewBox="0 0 45 30" role="img" aria-label="European Union"><rect width="45" height="30" fill="#003399"/><g fill="#FFCC00"><polygon points="22.50,5.45 22.85,6.52 23.97,6.52 23.06,7.18 23.41,8.25 22.50,7.59 21.59,8.25 21.94,7.18 21.03,6.52 22.15,6.52"/><polygon points="26.50,6.52 26.85,7.60 27.97,7.59 27.06,8.25 27.41,9.33 26.50,8.66 25.59,9.33 25.94,8.25 25.03,7.59 26.15,7.60"/><polygon points="29.43,9.45 29.77,10.52 30.90,10.52 29.99,11.18 30.34,12.25 29.43,11.59 28.52,12.25 28.87,11.18 27.95,10.52 29.08,10.52"/><polygon points="30.50,13.45 30.85,14.52 31.97,14.52 31.06,15.18 31.41,16.25 30.50,15.59 29.59,16.25 29.94,15.18 29.03,14.52 30.15,14.52"/><polygon points="29.43,17.45 29.77,18.52 30.90,18.52 29.99,19.18 30.34,20.25 29.43,19.59 28.52,20.25 28.87,19.18 27.95,18.52 29.08,18.52"/><polygon points="26.50,20.38 26.85,21.45 27.97,21.45 27.06,22.11 27.41,23.18 26.50,22.52 25.59,23.18 25.94,22.11 25.03,21.45 26.15,21.45"/><polygon points="22.50,21.45 22.85,22.52 23.97,22.52 23.06,23.18 23.41,24.25 22.50,23.59 21.59,24.25 21.94,23.18 21.03,22.52 22.15,22.52"/><polygon points="18.50,20.38 18.85,21.45 19.97,21.45 19.06,22.11 19.41,23.18 18.50,22.52 17.59,23.18 17.94,22.11 17.03,21.45 18.15,21.45"/><polygon points="15.57,17.45 15.92,18.52 17.05,18.52 16.13,19.18 16.48,20.25 15.57,19.59 14.66,20.25 15.01,19.18 14.10,18.52 15.23,18.52"/><polygon points="14.50,13.45 14.85,14.52 15.97,14.52 15.06,15.18 15.41,16.25 14.50,15.59 13.59,16.25 13.94,15.18 13.03,14.52 14.15,14.52"/><polygon points="15.57,9.45 15.92,10.52 17.05,10.52 16.13,11.18 16.48,12.25 15.57,11.59 14.66,12.25 15.01,11.18 14.10,10.52 15.23,10.52"/><polygon points="18.50,6.52 18.85,7.60 19.97,7.59 19.06,8.25 19.41,9.33 18.50,8.66 17.59,9.33 17.94,8.25 17.03,7.59 18.15,7.60"/></g></svg> VAT</span></th>
+            <th scope="col"><span class="col-head"><svg class="flag" viewBox="0 0 38 20" role="img" aria-label="United States"><rect width="38" height="20" fill="#B22234"/><g fill="#fff"><rect y="1.538" width="38" height="1.538"/><rect y="4.615" width="38" height="1.538"/><rect y="7.692" width="38" height="1.538"/><rect y="10.769" width="38" height="1.538"/><rect y="13.846" width="38" height="1.538"/><rect y="16.923" width="38" height="1.538"/></g><rect width="15.2" height="10.769" fill="#3C3B6E"/><g fill="#fff"><polygon points="1.47,0.85 1.61,1.28 2.06,1.28 1.69,1.54 1.83,1.97 1.47,1.71 1.11,1.97 1.25,1.54 0.88,1.28 1.33,1.28"/><polygon points="3.92,0.85 4.06,1.28 4.51,1.28 4.15,1.54 4.29,1.97 3.92,1.71 3.56,1.97 3.70,1.54 3.33,1.28 3.78,1.28"/><polygon points="6.37,0.85 6.51,1.28 6.96,1.28 6.60,1.54 6.74,1.97 6.37,1.71 6.01,1.97 6.15,1.54 5.78,1.28 6.24,1.28"/><polygon points="8.83,0.85 8.96,1.28 9.42,1.28 9.05,1.54 9.19,1.97 8.83,1.71 8.46,1.97 8.60,1.54 8.24,1.28 8.69,1.28"/><polygon points="11.28,0.85 11.42,1.28 11.87,1.28 11.50,1.54 11.64,1.97 11.28,1.71 10.91,1.97 11.05,1.54 10.69,1.28 11.14,1.28"/><polygon points="13.73,0.85 13.87,1.28 14.32,1.28 13.95,1.54 14.09,1.97 13.73,1.71 13.37,1.97 13.51,1.54 13.14,1.28 13.59,1.28"/><polygon points="1.47,2.81 1.61,3.24 2.06,3.24 1.69,3.50 1.83,3.93 1.47,3.66 1.11,3.93 1.25,3.50 0.88,3.24 1.33,3.24"/><polygon points="4.54,2.81 4.67,3.24 5.12,3.24 4.76,3.50 4.90,3.93 4.54,3.66 4.17,3.93 4.31,3.50 3.95,3.24 4.40,3.24"/><polygon points="7.60,2.81 7.74,3.24 8.19,3.24 7.82,3.50 7.96,3.93 7.60,3.66 7.24,3.93 7.38,3.50 7.01,3.24 7.46,3.24"/><polygon points="10.67,2.81 10.80,3.24 11.25,3.24 10.89,3.50 11.03,3.93 10.67,3.66 10.30,3.93 10.44,3.50 10.08,3.24 10.53,3.24"/><polygon points="13.73,2.81 13.87,3.24 14.32,3.24 13.95,3.50 14.09,3.93 13.73,3.66 13.37,3.93 13.51,3.50 13.14,3.24 13.59,3.24"/><polygon points="1.47,4.76 1.61,5.19 2.06,5.19 1.69,5.46 1.83,5.89 1.47,5.62 1.11,5.89 1.25,5.46 0.88,5.19 1.33,5.19"/><polygon points="3.92,4.76 4.06,5.19 4.51,5.19 4.15,5.46 4.29,5.89 3.92,5.62 3.56,5.89 3.70,5.46 3.33,5.19 3.78,5.19"/><polygon points="6.37,4.76 6.51,5.19 6.96,5.19 6.60,5.46 6.74,5.89 6.37,5.62 6.01,5.89 6.15,5.46 5.78,5.19 6.24,5.19"/><polygon points="8.83,4.76 8.96,5.19 9.42,5.19 9.05,5.46 9.19,5.89 8.83,5.62 8.46,5.89 8.60,5.46 8.24,5.19 8.69,5.19"/><polygon points="11.28,4.76 11.42,5.19 11.87,5.19 11.50,5.46 11.64,5.89 11.28,5.62 10.91,5.89 11.05,5.46 10.69,5.19 11.14,5.19"/><polygon points="13.73,4.76 13.87,5.19 14.32,5.19 13.95,5.46 14.09,5.89 13.73,5.62 13.37,5.89 13.51,5.46 13.14,5.19 13.59,5.19"/><polygon points="1.47,6.72 1.61,7.15 2.06,7.15 1.69,7.41 1.83,7.84 1.47,7.58 1.11,7.84 1.25,7.41 0.88,7.15 1.33,7.15"/><polygon points="4.54,6.72 4.67,7.15 5.12,7.15 4.76,7.41 4.90,7.84 4.54,7.58 4.17,7.84 4.31,7.41 3.95,7.15 4.40,7.15"/><polygon points="7.60,6.72 7.74,7.15 8.19,7.15 7.82,7.41 7.96,7.84 7.60,7.58 7.24,7.84 7.38,7.41 7.01,7.15 7.46,7.15"/><polygon points="10.67,6.72 10.80,7.15 11.25,7.15 10.89,7.41 11.03,7.84 10.67,7.58 10.30,7.84 10.44,7.41 10.08,7.15 10.53,7.15"/><polygon points="13.73,6.72 13.87,7.15 14.32,7.15 13.95,7.41 14.09,7.84 13.73,7.58 13.37,7.84 13.51,7.41 13.14,7.15 13.59,7.15"/><polygon points="1.47,8.68 1.61,9.11 2.06,9.11 1.69,9.37 1.83,9.80 1.47,9.53 1.11,9.80 1.25,9.37 0.88,9.11 1.33,9.11"/><polygon points="3.92,8.68 4.06,9.11 4.51,9.11 4.15,9.37 4.29,9.80 3.92,9.53 3.56,9.80 3.70,9.37 3.33,9.11 3.78,9.11"/><polygon points="6.37,8.68 6.51,9.11 6.96,9.11 6.60,9.37 6.74,9.80 6.37,9.53 6.01,9.80 6.15,9.37 5.78,9.11 6.24,9.11"/><polygon points="8.83,8.68 8.96,9.11 9.42,9.11 9.05,9.37 9.19,9.80 8.83,9.53 8.46,9.80 8.60,9.37 8.24,9.11 8.69,9.11"/><polygon points="11.28,8.68 11.42,9.11 11.87,9.11 11.50,9.37 11.64,9.80 11.28,9.53 10.91,9.80 11.05,9.37 10.69,9.11 11.14,9.11"/><polygon points="13.73,8.68 13.87,9.11 14.32,9.11 13.95,9.37 14.09,9.80 13.73,9.53 13.37,9.80 13.51,9.37 13.14,9.11 13.59,9.11"/></g></svg> US sales tax</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Tax determination</th>
+            <td>Where the transaction takes place: detailed place-of-supply rules</td>
+            <td>Where the customer is: which state, county, city and district apply</td>
+          </tr>
+          <tr>
+            <th scope="row">Tax reporting</th>
+            <td>Complex: multiple returns and listings, mandatory e-invoicing in many countries</td>
+            <td>State-specific return formats; local jurisdiction codes; home&#8209;rule local filings</td>
+          </tr>
+          <tr>
+            <th scope="row">AI limitations</th>
+            <td>Generating e-invoices; mapping transactions to return boxes</td>
+            <td>The jurisdiction and rate lookup</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="table-note">In both: AI helps with research and reasoning over the law</p>
+    </div>
   </div>
 </section>
 
-<!-- ============ 4. Common misconceptions— inverted, the centre of the talk ============ -->
-<section id="hard-case" class="invert">
-  <h2 class="slide-title">Do You Know How Gen AI Works?</h2>
+<!-- ============ AGENDA: PART 2 ============ -->
+<section id="agenda-2" class="wash">
+  <h2 class="slide-title">Agenda</h2>
+  <div class="slide-body">
+    <ol class="agenda recap">
+      <li><span class="agenda-n">1</span><span class="agenda-part">Background</span></li>
+      <li class="is-current"><span class="agenda-n">2</span><span class="agenda-part">Can AI determine the sales tax rate?</span></li>
+      <li><span class="agenda-n">3</span><span class="agenda-part">General-purpose AI for indirect tax research</span></li>
+      <li><span class="agenda-n">4</span><span class="agenda-part">Agents</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 4–7. CAN AI DETERMINE THE SALES TAX RATE? ============ -->
+<section class="rate">
+  <h2 class="slide-title">Can AI Determine the Sales Tax Rate?</h2>
+</section>
+<section class="rate">
+  <h2 class="slide-title">Can AI Determine the Sales Tax Rate?</h2>
+</section>
+<section class="rate">
+  <h2 class="slide-title">Can AI Determine the Sales Tax Rate?</h2>
+</section>
+<section class="rate">
+  <h2 class="slide-title">Can AI Determine the Sales Tax Rate?</h2>
+</section>
+
+<!-- ============ AGENDA: PART 3 ============ -->
+<section id="agenda-3" class="wash">
+  <h2 class="slide-title">Agenda</h2>
+  <div class="slide-body">
+    <ol class="agenda recap">
+      <li><span class="agenda-n">1</span><span class="agenda-part">Background</span></li>
+      <li><span class="agenda-n">2</span><span class="agenda-part">Can AI determine the sales tax rate?</span></li>
+      <li class="is-current"><span class="agenda-n">3</span><span class="agenda-part">General-purpose AI for indirect tax research</span></li>
+      <li><span class="agenda-n">4</span><span class="agenda-part">Agents</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 8. THE APP IS NOT THE MODEL ============ -->
+<section id="apps">
+  <h2 class="slide-title">The App Is Not the Model</h2>
   <div class="slide-body">
     <ul class="bullets">
-      <li>How does its web search actually work?</li>
-      <li>Does it know when it doesn't know?</li>
-      <li>Does it learn from you?</li>
-      <li class="punch">The tool is fine. The gap is understanding.</li>
+      <li>The model knows only what you put in front of it</li>
+      <li>Memory, files, search, connectors: those are app layers</li>
+      <li>Connect your Drive or folders; skip the upload</li>
+      <li>Connected &ne; read</li>
+      <li>Projects: load your reference files once</li>
     </ul>
   </div>
 </section>
 
-<!-- ============ 5. MODEL & TOOL SELECTION ============ -->
-<section id="match" class="wash">
+<!-- ============ 9. MATCH THE MODEL ============ -->
+<section id="match">
   <h2 class="slide-title">Match the Model to the Task</h2>
   <div class="slide-body">
-    <ul class="bullets">
-      <li>Three tiers: frontier, workhorse, light</li>
-      <li>Most tax work runs fine on a workhorse</li>
-      <li>Reasoning models to analyse, fast models to draft</li>
-      <li>The newest model is rarely the right one</li>
-    </ul>
+    <div class="table-block">
+      <div class="tiers">
+        <div class="tier">
+          <h3>Flagship</h3>
+          <p>Highest performance, for the hardest reasoning. Expensive, and often slower.</p>
+        </div>
+        <div class="tier is-pick">
+          <p class="tier-tag">For tax work</p>
+          <h3>Workhorse</h3>
+          <p>Balanced capability, price, and speed. About 80% of day-to-day work.</p>
+        </div>
+        <div class="tier">
+          <h3>Light</h3>
+          <p>Small, fast, and cheap. Bulk processing, automations, and sub-agents.</p>
+        </div>
+      </div>
+      <p class="table-note">Turn reasoning up to analyse, down to draft. The newest model is rarely the right one.</p>
+    </div>
   </div>
 </section>
 
-<!-- ============ 6. COST ============ -->
-<section id="cost" class="wash">
-  <h2 class="slide-title">Chat Is Flat. Everything Else Is Metered.</h2>
+<!-- ============ 10. WEB SEARCH ============ -->
+<section id="search">
+  <h2 class="slide-title">How Does Web Search Work?</h2>
   <div class="slide-body">
     <ul class="bullets">
-      <li>Your subscription is not the whole cost</li>
-      <li>Agents pay per call &mdash; and they loop</li>
-      <li>Top-tier models are billed separately now</li>
-      <li>Set a spending cap before you build</li>
+      <li>Search is a tool, not a model capability</li>
+      <li>It returns a few results and snippets, not the web</li>
+      <li>Fetching a page is a separate, optional step</li>
+      <li>The model reasons over what came back</li>
+      <li>A pasted URL isn't necessarily a read page</li>
     </ul>
   </div>
 </section>
 
-<!-- ============ 7. CONTEXT WINDOW ============ -->
-<section id="window">
-  <h2 class="slide-title">The Model Only Sees What's in the Window</h2>
-  <div class="slide-body">
-    <ul class="bullets">
-      <li>Every conversation has a memory limit</li>
-      <li>The middle gets the least attention</li>
-      <li>Feed it sections, not whole documents</li>
-      <li>Summarize, then start fresh</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============ 8. PROMPTING — four moves, sequence justifies the numbers ============ -->
+<!-- ============ 11. HOW TO ASK ============ -->
 <section id="how-to-ask">
   <h2 class="slide-title">How to Ask</h2>
   <div class="slide-body">
@@ -124,21 +207,21 @@
         <div class="n">1</div>
         <div>
           <h3>Frame it</h3>
-          <p>Context, examples, structure</p>
+          <p class="bits"><span>Context</span><span>Examples</span><span>Output</span></p>
         </div>
       </div>
       <div class="move">
         <div class="n">2</div>
         <div>
           <h3>Define done</h3>
-          <p>Format, success criteria, permission to say &ldquo;I don't know&rdquo;</p>
+          <p class="bits"><span>Format</span><span>Success criteria</span><span>Permission to say &ldquo;I don't know&rdquo;</span></p>
         </div>
       </div>
       <div class="move">
         <div class="n">3</div>
         <div>
           <h3>Work the loop</h3>
-          <p>Questions first, edit—don't stack, review adversarially</p>
+          <p class="bits"><span>Questions first</span><span>Don't build on mistakes</span><span>Review adversarially</span></p>
         </div>
       </div>
       <div class="move">
@@ -152,62 +235,121 @@
   </div>
 </section>
 
-<!-- ============ 9. APPS ============ -->
-<section id="apps">
-  <h2 class="slide-title">The App Is Not the Model</h2>
+<!-- ============ 12. WHERE IT GOES WRONG ============ -->
+<section id="wrong" class="invert">
+  <h2 class="slide-title">Where It Goes Wrong</h2>
   <div class="slide-body">
     <ul class="bullets">
-      <li>The model knows only what you put in front of it</li>
-      <li>Memory, custom instructions, web search &mdash; those are app layers</li>
-      <li>Projects: shared files across chats, for work you repeat</li>
-      <li>Use a generalist you know well; specialists only when it fails</li>
+      <li>Fluent isn't correct: invented citations, outdated law</li>
+      <li>Bad data in, confident answers out</li>
+      <li>Unreviewed drafts, passed on</li>
+      <li>Usage is metered: set a spend cap</li>
     </ul>
   </div>
 </section>
 
-<!-- ============ 10. THREE PATTERNS ============ -->
-<section id="patterns" class="wash">
+<!-- ============ AGENDA: PART 4 ============ -->
+<section id="agenda-4" class="wash">
+  <h2 class="slide-title">Agenda</h2>
+  <div class="slide-body">
+    <ol class="agenda recap">
+      <li><span class="agenda-n">1</span><span class="agenda-part">Background</span></li>
+      <li><span class="agenda-n">2</span><span class="agenda-part">Can AI determine the sales tax rate?</span></li>
+      <li><span class="agenda-n">3</span><span class="agenda-part">General-purpose AI for indirect tax research</span></li>
+      <li class="is-current"><span class="agenda-n">4</span><span class="agenda-part">Agents</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 13. WHAT IS AN AGENT ============ -->
+<section id="agent">
+  <h2 class="slide-title">What Is an Agent?</h2>
+  <div class="slide-body">
+    <ul class="bullets">
+      <li>Chat answers a question. An agent works toward a goal.</li>
+      <li>It loops: plan, act, check, repeat</li>
+      <li>A different path, sometimes a different answer, each run</li>
+      <li>A skill is its operating manual for a specific job</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 14. NOT EVERYTHING NEEDS AN AGENT ============ -->
+<section id="patterns">
   <h2 class="slide-title">Not Everything Needs an Agent</h2>
   <div class="slide-body">
-    <div class="patterns">
-      <div class="pattern">
-        <h3>Workflow</h3>
-        <ul>
-          <li>Fixed steps, every time</li>
-          <li>Predictable</li>
-          <li>Breaks on exceptions</li>
-        </ul>
+    <div class="table-block">
+      <div class="patterns">
+        <div class="pattern">
+          <h3>Workflow</h3>
+          <p>Fixed steps, every time. Breaks on exceptions.</p>
+        </div>
+        <div class="pattern">
+          <h3>AI workflow</h3>
+          <p>One step uses AI. Stays auditable.</p>
+        </div>
+        <div class="pattern">
+          <h3>Agentic workflow</h3>
+          <p>One step handed to an agent. Autonomy inside a fence.</p>
+        </div>
+        <div class="pattern">
+          <h3>Agent</h3>
+          <p>A goal, not a path. A different route each run.</p>
+        </div>
       </div>
-      <div class="pattern is-pick">
-        <h3>AI workflow</h3>
-        <ul>
-          <li>Fixed steps, one uses AI</li>
-          <li>Handles the messy part</li>
-          <li>Stays auditable</li>
-        </ul>
-      </div>
-      <div class="pattern">
-        <h3>Agent</h3>
-        <ul>
-          <li>A goal, not a path</li>
-          <li>Plans and acts</li>
-          <li>Different route each run</li>
-        </ul>
-      </div>
+      <p class="table-note">The more autonomy, the more human review.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 11. TAKEAWAYS — biggest type, the photograph slide ============ -->
-<section id="takeaways">
-  <h2 class="slide-title">If you remember four things</h2>
+<!-- ============ 15. THREE QUESTIONS ============ -->
+<section id="questions">
+  <h2 class="slide-title">Three Questions Before<br>You Build an Agent</h2>
   <div class="slide-body">
-    <ol class="takeaways">
-      <li>Match the model to the task</li>
-      <li>Ask it what it needs before it drafts</li>
-      <li>Do the thinking; let it polish</li>
-      <li>Set up shared context for work you repeat</li>
-    </ol>
+    <table class="compare decide">
+      <caption class="sr-only">Three questions that decide between an agent and a workflow</caption>
+      <colgroup>
+        <col class="col-label">
+        <col>
+        <col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Yes &rarr; an agent may help</th>
+          <th scope="col">No &rarr; build a workflow</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Is the task interpretation-heavy?</th>
+          <td>Taxability research for a new product</td>
+          <td>Applying a known rate; filing a return</td>
+        </tr>
+        <tr>
+          <th scope="row">Can you live with a different answer each run?</th>
+          <td>A research summary for review</td>
+          <td>A return figure or a tax calculation</td>
+        </tr>
+        <tr>
+          <th scope="row">Do the edge cases outnumber the rules?</th>
+          <td>Spotting anomalies across millions of transactions</td>
+          <td>Classifying a sale as intrastate, interstate or international by ship-from and ship-to</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 16. WHAT TO DO ON MONDAY ============ -->
+<section id="monday" class="invert">
+  <h2 class="slide-title">What to Do on Monday</h2>
+  <div class="slide-body">
+    <ul class="bullets">
+      <li>Use AI to reason; use a tax engine for the rate</li>
+      <li>Know what the model actually saw</li>
+      <li>Put AI on the one hard step, and a human after it</li>
+    </ul>
   </div>
 </section>
 

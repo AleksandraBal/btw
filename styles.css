@@ -43,20 +43,31 @@
   margin: 0;
   white-space: nowrap;
 }
-
-/* ---------- Standard bullets: no markers, space does the work ---------- */
+/* ---------- Standard bullets: square markers echo the brand mark ---------- */
 .bullets{
   list-style: none;
   margin: 52px 0 0 0;
   padding: 0;
 }
 .bullets li{
+  position: relative;
+  padding-left: 44px;
   font-size: 37px;
   font-weight: 400;
   line-height: 1.32;
   margin-bottom: 30px;
   white-space: nowrap;
 }
+.bullets li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 16px;
+  height: 16px;
+  background: var(--accent);
+}
+section.invert .bullets li::before{ background: var(--signal); }
 .bullets li:last-child{ margin-bottom: 0; }
 .bullets.five li{ font-size: 33px; margin-bottom: 22px; }
 
@@ -97,6 +108,34 @@
 .title-date{ font-size: 25px; color: var(--mute); margin-top: 22px; }
 .geo-accent{ position: absolute; right: 0; bottom: 0; width: 200px; height: 200px; }
 
+/* ============ AGENDA ============ */
+.agenda{ list-style: none; margin: 52px 0 0 0; padding: 0; }
+.agenda li{
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: baseline;
+  padding: 20px 0;
+}
+.agenda li + li{ border-top: 1px solid var(--hair); }
+.agenda-n{
+  font-family: var(--serif);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--accent);
+}
+.agenda-part{
+  font-size: 34px;
+  line-height: 1.25;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.agenda.recap li:not(.is-current) .agenda-n,
+.agenda.recap li:not(.is-current) .agenda-part{ color: #B4C0CC; }
+.agenda.recap li.is-current .agenda-part{
+  color: var(--accent);
+  font-weight: 500;
+}
+
 /* ============ INVERTED SLIDE — the one dark moment ============ */
 section.invert{ background: var(--ink); color: #FFFFFF; }
 section.invert .slide-title{ color: #FFFFFF; }
@@ -116,44 +155,218 @@ section.invert .bullets li.punch{
 }
 .move{ display: grid; grid-template-columns: 52px 1fr; align-items: start; }
 .move .n{
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 38px;
-  color: var(--accent);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  font-size: 22px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: var(--accent);
   line-height: 1;
-  padding-top: 4px;
 }
 .move h3{
   font-family: var(--sans);
   font-size: 31px;
   font-weight: 600;
   margin: 0 0 8px 0;
+  color: var(--accent);
 }
 .move p{
+  font-family: var(--sans);
   font-size: 24px;
+  font-weight: 400;
   line-height: 1.34;
   color: var(--mute);
   margin: 0;
 }
+.move p.bits{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.4em;
+  row-gap: 0.12em;
+}
+.move p.bits span{ white-space: nowrap; }
+.move p.bits span + span::before{ content: "•\00a0"; }
 
-/* ============ THREE PATTERNS ============ */
-#patterns .slide-body{ align-items: flex-start; padding-top: 52px; }
-.patterns{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+/* ============ COMPARISON TABLES ============ */
+#blind-spots .slide-body,
+#match .slide-body,
+#patterns .slide-body,
+#questions .slide-body{
+  align-items: flex-start;
+  padding-top: 36px;
+}
+.table-block{ width: 100%; }
+.compare{
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.compare caption.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+#blind-spots .col-label{ width: 30%; }
+#questions .col-label{ width: 34%; }
+.compare th,
+.compare td{
+  font-family: var(--sans);
+  text-align: left;
+  vertical-align: top;
+  font-weight: 400;
+}
+.compare thead th{
+  font-family: var(--sans);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.15;
+  padding: 0 22px 14px 0;
+  border-bottom: 2px solid var(--ink);
+  color: var(--accent);
+}
+.col-head{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.flag{
+  width: 40px;
+  height: 26px;
+  flex: none;
+  display: block;
+  border: none;
+  box-shadow: none;
+}
+.compare thead th:last-child,
+.compare tbody td:last-child{ padding-right: 0; }
+.compare tbody th,
+.compare tbody td{
+  padding: 16px 22px 16px 0;
+  border-bottom: 1px solid var(--hair);
+  font-size: 20px;
+  line-height: 1.32;
+}
+.compare tbody th{
+  font-weight: 600;
+  padding-right: 28px;
+}
+.compare tbody tr:last-child th,
+.compare tbody tr:last-child td{ border-bottom: none; }
+#blind-spots .compare th:first-child{ padding-left: 16px; }
+#blind-spots .compare tbody tr:last-child th,
+#blind-spots .compare tbody tr:last-child td{ background: #F4F3FF; }
+#blind-spots .compare tbody tr:last-child th{ color: var(--accent); }
+#questions .compare th:nth-child(2),
+#questions .compare td:nth-child(2){
+  background: #F4F3FF;
+  padding-left: 18px;
+}
+#questions .compare th:nth-child(3),
+#questions .compare td:nth-child(3){ padding-left: 22px; }
+#questions .compare thead th{ font-size: 24px; padding-top: 14px; }
+#questions .compare tbody th,
+#questions .compare tbody td{ font-size: 18px; padding-top: 18px; padding-bottom: 18px; }
+.table-note{
+  margin: 28px 0 0 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+/* ============ FOUR PATTERNS ============ */
+.patterns{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .pattern{
   background: var(--wash);
   border-top: 4px solid var(--hair);
-  padding: 30px 28px 32px 28px;
+  padding: 22px 16px 24px 16px;
 }
-.pattern.is-pick{ border-top-color: var(--signal); background: #EAF1F8; }
+section.wash .pattern{ background: var(--paper); }
+.pattern:nth-child(1){ border-top-color: var(--signal); }
+.pattern:nth-child(2){ border-top-color: #7FA8FF; }
+.pattern:nth-child(3){ border-top-color: var(--accent); }
+.pattern:nth-child(4){ border-top-color: var(--ink); }
 .pattern h3{
-  font-family: var(--serif);
-  font-size: 34px;
-  font-weight: 500;
-  margin: 0 0 20px 0;
+  font-family: var(--sans);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  color: var(--accent);
 }
 .pattern ul{ list-style: none; margin: 0; padding: 0; }
-.pattern li{ font-size: 24px; line-height: 1.34; margin-bottom: 14px; }
+.pattern li{ font-size: 18px; line-height: 1.32; margin-bottom: 12px; }
 .pattern li:last-child{ margin-bottom: 0; }
+.pattern p{
+  font-family: var(--sans);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.35;
+  margin: 0;
+}
+#patterns .table-note{ margin-top: 26px; }
+
+/* ============ MODEL TIERS ============ */
+.tiers{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.tier{
+  background: var(--wash);
+  border-top: 4px solid var(--hair);
+  padding: 26px 24px 30px;
+}
+#match .table-block{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+#match .table-note{
+  position: relative;
+  margin-top: 32px;
+}
+.tier:nth-child(1){ border-top-color: var(--signal); }
+.tier:nth-child(3){ border-top-color: var(--ink); }
+.tier:not(.is-pick){ padding-top: 56px; }
+.tier h3{
+  font-family: var(--sans);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 12px;
+  color: var(--accent);
+}
+.tier p{
+  font-family: var(--sans);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.35;
+  margin: 0;
+}
+.tier-tag{
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 12px;
+}
+.tier.is-pick{
+  background: var(--ink);
+  border-top-color: var(--signal);
+}
+.tier.is-pick h3{ color: #fff; }
+.tier.is-pick p{ color: rgba(255,255,255,0.88); }
+.tier.is-pick .tier-tag{ color: var(--signal); }
 
 /* ============ TAKEAWAYS — biggest type in the deck ============ */
 #takeaways .slide-body{ align-items: flex-start; padding-top: 52px; }
@@ -178,13 +391,6 @@ section.invert .bullets li.punch{
   color: var(--accent);
 }
 #takeaways .slide-title{ font-size: 46px; color: var(--mute); }
-
-/* Long titles: step down just enough to stay on one line at 1280px */
-#cost .slide-title{ font-size: 60px; }
-#window .slide-title{ font-size: 55px; }
-#new-models .slide-title{ font-size: 58px; }
-
-
 /* ---------- Brand mark + section rhythm ---------- */
 .reveal .slides section:not(#title){
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect x='80' y='90' width='110' height='65' fill='%2300D4FF'/%3E%3Crect x='105' y='60' width='90' height='60' fill='%230A2540'/%3E%3Crect x='125' y='110' width='80' height='70' fill='%23635BFF'/%3E%3C/svg%3E");
@@ -193,7 +399,7 @@ section.invert .bullets li.punch{
   background-size: 136px 136px;
 }
 /* light wash marks a change of section — the eye registers it, no label needed */
-.reveal .slides section.wash{ background-color: #F5F8FB; }
+.reveal .slides section.wash{ background-color: #F4F3FF; }
 .reveal .slides section.invert{
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect x='80' y='90' width='110' height='65' fill='%2300D4FF'/%3E%3Crect x='105' y='60' width='90' height='60' fill='%23FFFFFF'/%3E%3Crect x='125' y='110' width='80' height='70' fill='%23635BFF'/%3E%3C/svg%3E");
   background-color: var(--ink);
@@ -330,10 +536,6 @@ html.print-pdf .reveal .speaker-notes-pdf{
   }
 
   html:not(.print-pdf) .reveal .slide-title{ font-size: 62px !important; }
-  html:not(.print-pdf) #cost .slide-title{ font-size: 60px !important; }
-  html:not(.print-pdf) #window .slide-title{ font-size: 55px !important; }
-  html:not(.print-pdf) #new-models .slide-title{ font-size: 58px !important; }
-  html:not(.print-pdf) #takeaways .slide-title{ font-size: 46px !important; color: var(--mute) !important; }
 
   html:not(.print-pdf) .reveal .slide-body{
     display: flex !important;
@@ -343,8 +545,10 @@ html.print-pdf .reveal .speaker-notes-pdf{
     height: auto !important;
     margin: 0 !important;
   }
+  html:not(.print-pdf) #blind-spots .slide-body,
+  html:not(.print-pdf) #match .slide-body,
   html:not(.print-pdf) #patterns .slide-body,
-  html:not(.print-pdf) #takeaways .slide-body{
+  html:not(.print-pdf) #questions .slide-body{
     align-items: flex-start !important;
   }
   html:not(.print-pdf) .reveal .bullets{
@@ -363,8 +567,8 @@ html.print-pdf .reveal .speaker-notes-pdf{
 
   html:not(.print-pdf) .reveal .patterns{
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 28px !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 16px !important;
     width: 100% !important;
     margin: 0 !important;
   }
@@ -374,11 +578,76 @@ html.print-pdf .reveal .speaker-notes-pdf{
     margin: 0 !important;
     background: var(--wash) !important;
   }
-  html:not(.print-pdf) .reveal .pattern.is-pick{
-    background: #EAF1F8 !important;
+  html:not(.print-pdf) .reveal section.wash .pattern{ background: var(--paper) !important; }
+  html:not(.print-pdf) .reveal .pattern h3{
+    font-family: var(--sans) !important;
+    font-weight: 600 !important;
+    font-size: 26px !important;
+    color: var(--accent) !important;
   }
-  html:not(.print-pdf) .reveal .pattern h3{ font-size: 34px !important; }
-  html:not(.print-pdf) .reveal .pattern li{ font-size: 24px !important; margin: 0 0 14px 0 !important; }
+  html:not(.print-pdf) .reveal .pattern li{ font-size: 18px !important; margin: 0 0 12px 0 !important; }
+  html:not(.print-pdf) .reveal .pattern p{
+    font-family: var(--sans) !important;
+    font-weight: 400 !important;
+    font-size: 22px !important;
+    margin: 0 !important;
+  }
+
+  html:not(.print-pdf) .reveal .tiers{
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  html:not(.print-pdf) .reveal .tier{
+    display: block !important;
+    width: auto !important;
+    margin: 0 !important;
+    background: var(--wash) !important;
+  }
+  html:not(.print-pdf) .reveal .tier.is-pick{ background: var(--ink) !important; }
+  html:not(.print-pdf) .reveal .tier h3{
+    font-family: var(--sans) !important;
+    font-weight: 600 !important;
+    font-size: 32px !important;
+    color: var(--accent) !important;
+  }
+  html:not(.print-pdf) .reveal .tier.is-pick h3{ color: #fff !important; }
+  html:not(.print-pdf) .reveal .tier p{
+    font-family: var(--sans) !important;
+    font-weight: 400 !important;
+    font-size: 22px !important;
+    margin: 0 !important;
+  }
+  html:not(.print-pdf) .reveal .tier.is-pick p{ color: rgba(255,255,255,0.88) !important; }
+  html:not(.print-pdf) .reveal .tier.is-pick .tier-tag{ color: var(--signal) !important; }
+
+  html:not(.print-pdf) .reveal .compare{
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+  }
+  html:not(.print-pdf) .reveal .compare thead th{
+    font-family: var(--sans) !important;
+    font-weight: 600 !important;
+    font-size: 28px !important;
+    color: var(--accent) !important;
+  }
+  html:not(.print-pdf) #questions .compare thead th{ font-size: 24px !important; }
+  html:not(.print-pdf) .reveal .compare tbody th,
+  html:not(.print-pdf) .reveal .compare tbody td{
+    font-size: 20px !important;
+  }
+  html:not(.print-pdf) #questions .compare tbody th,
+  html:not(.print-pdf) #questions .compare tbody td{
+    font-size: 18px !important;
+  }
+  html:not(.print-pdf) .reveal .table-note{
+    font-size: 26px !important;
+    color: var(--ink) !important;
+  }
 
   html:not(.print-pdf) .reveal .moves{
     display: grid !important;
@@ -393,8 +662,19 @@ html.print-pdf .reveal .speaker-notes-pdf{
     width: auto !important;
     margin: 0 !important;
   }
-  html:not(.print-pdf) .reveal .move h3{ font-size: 31px !important; }
-  html:not(.print-pdf) .reveal .move p{ font-size: 24px !important; color: var(--mute) !important; }
+  html:not(.print-pdf) .reveal .move h3{
+    font-family: var(--sans) !important;
+    font-weight: 600 !important;
+    font-size: 31px !important;
+    color: var(--accent) !important;
+  }
+  html:not(.print-pdf) .reveal .move p{
+    font-family: var(--sans) !important;
+    font-weight: 400 !important;
+    font-size: 24px !important;
+    color: var(--mute) !important;
+  }
+  html:not(.print-pdf) .reveal .move p.bits{ display: flex !important; flex-wrap: wrap !important; }
 
   html:not(.print-pdf) .reveal .takeaways{
     display: block !important;
@@ -408,7 +688,6 @@ html.print-pdf .reveal .speaker-notes-pdf{
     margin: 0 0 34px 0 !important;
     width: auto !important;
   }
-
   html:not(.print-pdf) .reveal #title{
     justify-content: flex-start !important;
   }
@@ -434,7 +713,13 @@ html.print-pdf .reveal .speaker-notes-pdf{
   section.invert,
   section.wash,
   .pattern,
-  .pattern.is-pick{
+  .pattern.is-pick,
+  .tier,
+  .tier.is-pick,
+  .compare th,
+  .compare td,
+  .move .n,
+  .bullets li::before{
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
