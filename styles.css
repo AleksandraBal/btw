@@ -73,22 +73,26 @@ section.invert .bullets li::before{ background: var(--signal); }
 
 .slide-body{ flex: 1; min-height: 0; display: flex; align-items: center; }
 .slide-body > *{ width: 100%; }
+/* reveal.js writes display:block inline on visible slides; the map needs flex to get a height. */
+.reveal .slides > section.rate.present{ display: flex !important; }
 .rate .slide-body{ padding-top: 24px; }
-.reveal .rate .slide-body img{
+.reveal .rate .slide-body > img:not(.example-response-overlay){
+  align-self: stretch;
   width: 100%;
   height: 100%;
   max-width: 100%;
   max-height: 100%;
   min-height: 0;
   margin: 0;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center top;
 }
 
 #example-ai-response .slide-body{ position: relative; }
 .reveal #example-ai-response .example-response-overlay{
   position: absolute;
   left: 50%;
-  top: 36px;
+  bottom: 16px;
   transform: translateX(-50%);
   z-index: 2;
   display: block;
@@ -106,8 +110,7 @@ section.invert .bullets li::before{ background: var(--signal); }
 .address-rates .slide-body{ position: relative; }
 .reveal .address-rate-overlay{
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 16px;
   width: 352px;
   box-sizing: border-box;
   padding: 14px;
@@ -640,6 +643,17 @@ html.print-pdf .reveal .speaker-notes-pdf{
     width: 100% !important;
     height: auto !important;
     margin: 0 !important;
+  }
+  html:not(.print-pdf) .reveal .rate .slide-body{
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  html:not(.print-pdf) .reveal .rate .slide-body > img:not(.example-response-overlay){
+    height: 100% !important;
+    max-height: 100% !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+    object-position: center top !important;
   }
   html:not(.print-pdf) #blind-spots .slide-body,
   html:not(.print-pdf) #match .slide-body,
