@@ -69,109 +69,9 @@
 }
 section.invert .bullets li::before{ background: var(--signal); }
 .bullets li:last-child{ margin-bottom: 0; }
-.bullets.five li{ font-size: 33px; margin-bottom: 22px; }
 
 .slide-body{ flex: 1; min-height: 0; display: flex; align-items: center; }
 .slide-body > *{ width: 100%; }
-/* reveal.js writes display:block inline on visible slides; the map needs flex to get a height. */
-.reveal .slides > section.rate.present{ display: flex !important; }
-.rate .slide-body{ padding-top: 24px; }
-.reveal .rate .slide-body > img:not(.example-response-overlay){
-  align-self: stretch;
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  min-height: 0;
-  margin: 0;
-  object-fit: cover;
-  object-position: center top;
-}
-
-#example-ai-response .slide-body{ position: relative; }
-.reveal #example-ai-response .example-response-overlay{
-  position: absolute;
-  left: 50%;
-  bottom: 16px;
-  transform: translateX(-50%);
-  z-index: 2;
-  display: block;
-  width: 640px;
-  height: auto;
-  max-width: 100%;
-  max-height: 75%;
-  background: #FFFFFF;
-  border: 1px solid var(--hair);
-  border-radius: 8px;
-  box-shadow: 0 8px 28px rgba(10, 37, 64, 0.24);
-}
-
-/* Build from one to three callouts in fixed positions across the map. */
-.address-rates .slide-body{ position: relative; }
-.reveal .address-rate-overlay{
-  position: absolute;
-  bottom: 16px;
-  width: 352px;
-  box-sizing: border-box;
-  padding: 14px;
-  background: #FFFFFF;
-  color: var(--ink);
-  border: 1px solid var(--hair);
-  border-radius: 8px;
-  box-shadow: 0 8px 28px rgba(10, 37, 64, 0.24);
-  font-size: 16px;
-  line-height: 1.35;
-}
-.reveal .address-rate-left{ left: 0; }
-.reveal .address-rate-center{ left: calc(50% - 176px); }
-.reveal .address-rate-right{ right: 0; }
-.reveal .address-rate-overlay h3{
-  margin: 0 0 8px;
-  font-family: var(--sans);
-  font-size: 19px;
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--ink);
-}
-.reveal .address-rate-location{
-  margin: 0 0 14px;
-  font-size: 16px;
-  color: var(--mute);
-}
-.reveal .address-rate-overlay table{
-  width: 100%;
-  margin: 0;
-  border-collapse: collapse;
-  font-size: 13px;
-}
-.reveal .address-rate-overlay th,
-.reveal .address-rate-overlay td{
-  padding: 9px 4px;
-  border-bottom: 1px solid var(--hair);
-  text-align: left;
-  vertical-align: top;
-}
-.reveal .address-rate-overlay thead{ background: var(--wash); }
-.reveal .address-rate-overlay th:last-child,
-.reveal .address-rate-overlay td:last-child{
-  text-align: right;
-  white-space: nowrap;
-}
-.reveal .address-rate-overlay tfoot{
-  color: var(--accent);
-  font-size: 18px;
-  font-weight: 600;
-}
-.reveal .address-rate-overlay tfoot th,
-.reveal .address-rate-overlay tfoot td{ border-bottom: 0; }
-.reveal .address-rate-overlay .city-jurisdiction-highlight{
-  background: #FFE589;
-  color: var(--ink);
-  font-weight: 700;
-  box-shadow: inset 0 -3px 0 #C58A00;
-  print-color-adjust: exact;
-  -webkit-print-color-adjust: exact;
-}
 
 /* ============ TITLE SLIDE ============ */
 #title{ justify-content: flex-start; }
@@ -187,10 +87,10 @@ section.invert .bullets li::before{ background: var(--signal); }
 }
 .title-main{
   font-family: var(--serif);
-  font-size: 92px;
+  font-size: 72px;
   font-weight: 400;
-  letter-spacing: -0.028em;
-  line-height: 1.02;
+  letter-spacing: -0.024em;
+  line-height: 1.06;
   margin: 0;
 }
 .title-sub{
@@ -235,15 +135,10 @@ section.invert .bullets li::before{ background: var(--signal); }
   font-weight: 500;
 }
 
-/* ============ INVERTED SLIDE — the one dark moment ============ */
+/* ============ INVERTED SLIDES (dark) ============ */
 section.invert{ background: var(--ink); color: #FFFFFF; }
 section.invert .slide-title{ color: #FFFFFF; }
 section.invert .bullets li{ color: rgba(255,255,255,0.88); }
-section.invert .bullets li.punch{
-  color: var(--signal);
-  font-weight: 500;
-}
-.reveal section.invert .slide-number{ color: rgba(255,255,255,0.45); }
 
 /* ============ FOUR-MOVE GRID (prompting) ============ */
 .moves{
@@ -291,7 +186,6 @@ section.invert .bullets li.punch{
 .move p.bits span + span::before{ content: "•\00a0"; }
 
 /* ============ COMPARISON TABLES ============ */
-#blind-spots .slide-body,
 #match .slide-body,
 #patterns .slide-body,
 #questions .slide-body{
@@ -315,7 +209,6 @@ section.invert .bullets li.punch{
   white-space: nowrap;
   border: 0;
 }
-#blind-spots .col-label{ width: 30%; }
 #questions .col-label{ width: 34%; }
 .compare th,
 .compare td{
@@ -333,19 +226,6 @@ section.invert .bullets li.punch{
   border-bottom: 2px solid var(--ink);
   color: var(--accent);
 }
-.col-head{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-.flag{
-  width: 40px;
-  height: 26px;
-  flex: none;
-  display: block;
-  border: none;
-  box-shadow: none;
-}
 .compare thead th:last-child,
 .compare tbody td:last-child{ padding-right: 0; }
 .compare tbody th,
@@ -361,10 +241,6 @@ section.invert .bullets li.punch{
 }
 .compare tbody tr:last-child th,
 .compare tbody tr:last-child td{ border-bottom: none; }
-#blind-spots .compare th:first-child{ padding-left: 16px; }
-#blind-spots .compare tbody tr:last-child th,
-#blind-spots .compare tbody tr:last-child td{ background: #F4F3FF; }
-#blind-spots .compare tbody tr:last-child th{ color: var(--accent); }
 #questions .compare th:nth-child(2),
 #questions .compare td:nth-child(2){
   background: #F4F3FF;
@@ -391,7 +267,6 @@ section.invert .bullets li.punch{
   border-top: 4px solid var(--hair);
   padding: 22px 16px 24px 16px;
 }
-section.wash .pattern{ background: var(--paper); }
 .pattern:nth-child(1){ border-top-color: var(--signal); }
 .pattern:nth-child(2){ border-top-color: #7FA8FF; }
 .pattern:nth-child(3){ border-top-color: var(--accent); }
@@ -404,9 +279,6 @@ section.wash .pattern{ background: var(--paper); }
   margin: 0 0 16px 0;
   color: var(--accent);
 }
-.pattern ul{ list-style: none; margin: 0; padding: 0; }
-.pattern li{ font-size: 18px; line-height: 1.32; margin-bottom: 12px; }
-.pattern li:last-child{ margin-bottom: 0; }
 .pattern p{
   font-family: var(--sans);
   font-size: 22px;
@@ -423,15 +295,7 @@ section.wash .pattern{ background: var(--paper); }
   border-top: 4px solid var(--hair);
   padding: 26px 24px 30px;
 }
-#match .table-block{
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-#match .table-note{
-  position: relative;
-  margin-top: 32px;
-}
+#match .table-note{ margin-top: 32px; }
 .tier:nth-child(1){ border-top-color: var(--signal); }
 .tier:nth-child(3){ border-top-color: var(--ink); }
 .tier:not(.is-pick){ padding-top: 56px; }
@@ -467,29 +331,6 @@ section.wash .pattern{ background: var(--paper); }
 .tier.is-pick p{ color: rgba(255,255,255,0.88); }
 .tier.is-pick .tier-tag{ color: var(--signal); }
 
-/* ============ TAKEAWAYS — biggest type in the deck ============ */
-#takeaways .slide-body{ align-items: flex-start; padding-top: 52px; }
-.takeaways{ list-style: none; margin: 0; padding: 0; counter-reset: t; }
-.takeaways li{
-  counter-increment: t;
-  display: grid;
-  grid-template-columns: 68px 1fr;
-  align-items: baseline;
-  margin-bottom: 34px;
-  font-size: 46px;
-  line-height: 1.2;
-  font-weight: 400;
-  white-space: nowrap;
-}
-.takeaways li:last-child{ margin-bottom: 0; }
-.takeaways li::before{
-  content: counter(t);
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 34px;
-  color: var(--accent);
-}
-#takeaways .slide-title{ font-size: 46px; color: var(--mute); }
 /* ---------- Brand mark + section rhythm ---------- */
 .reveal .slides section:not(#title){
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect x='80' y='90' width='110' height='65' fill='%2300D4FF'/%3E%3Crect x='105' y='60' width='90' height='60' fill='%230A2540'/%3E%3Crect x='125' y='110' width='80' height='70' fill='%23635BFF'/%3E%3C/svg%3E");
@@ -503,16 +344,16 @@ section.wash .pattern{ background: var(--paper); }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect x='80' y='90' width='110' height='65' fill='%2300D4FF'/%3E%3Crect x='105' y='60' width='90' height='60' fill='%23FFFFFF'/%3E%3Crect x='125' y='110' width='80' height='70' fill='%23635BFF'/%3E%3C/svg%3E");
   background-color: var(--ink);
 }
-/* slide number moves left; the mark owns the bottom-right corner */
-.reveal .slide-number{ right: auto; left: 36px; }
 
-/* ---------- Chrome ---------- */
+/* ---------- Chrome: slide number sits left; the mark owns the bottom-right corner ---------- */
 .reveal .slide-number{
+  right: auto;
+  left: 36px;
+  bottom: 26px;
   background: transparent;
   color: var(--mute);
   font-family: var(--sans);
   font-size: 17px;
-  bottom: 26px;
 }
 
 /* ---------- Print / PDF: match the on-screen slide, one page each ---------- */
@@ -644,18 +485,6 @@ html.print-pdf .reveal .speaker-notes-pdf{
     height: auto !important;
     margin: 0 !important;
   }
-  html:not(.print-pdf) .reveal .rate .slide-body{
-    min-height: 0 !important;
-    overflow: hidden !important;
-  }
-  html:not(.print-pdf) .reveal .rate .slide-body > img:not(.example-response-overlay){
-    height: 100% !important;
-    max-height: 100% !important;
-    min-height: 0 !important;
-    object-fit: cover !important;
-    object-position: center top !important;
-  }
-  html:not(.print-pdf) #blind-spots .slide-body,
   html:not(.print-pdf) #match .slide-body,
   html:not(.print-pdf) #patterns .slide-body,
   html:not(.print-pdf) #questions .slide-body{
@@ -669,10 +498,6 @@ html.print-pdf .reveal .speaker-notes-pdf{
   html:not(.print-pdf) .reveal .bullets li{
     font-size: 37px !important;
     margin: 0 0 30px 0 !important;
-  }
-  html:not(.print-pdf) .reveal .bullets.five li{
-    font-size: 33px !important;
-    margin: 0 0 22px 0 !important;
   }
 
   html:not(.print-pdf) .reveal .patterns{
@@ -688,14 +513,12 @@ html.print-pdf .reveal .speaker-notes-pdf{
     margin: 0 !important;
     background: var(--wash) !important;
   }
-  html:not(.print-pdf) .reveal section.wash .pattern{ background: var(--paper) !important; }
   html:not(.print-pdf) .reveal .pattern h3{
     font-family: var(--sans) !important;
     font-weight: 600 !important;
     font-size: 26px !important;
     color: var(--accent) !important;
   }
-  html:not(.print-pdf) .reveal .pattern li{ font-size: 18px !important; margin: 0 0 12px 0 !important; }
   html:not(.print-pdf) .reveal .pattern p{
     font-family: var(--sans) !important;
     font-weight: 400 !important;
@@ -786,18 +609,6 @@ html.print-pdf .reveal .speaker-notes-pdf{
   }
   html:not(.print-pdf) .reveal .move p.bits{ display: flex !important; flex-wrap: wrap !important; }
 
-  html:not(.print-pdf) .reveal .takeaways{
-    display: block !important;
-    width: 100% !important;
-    margin: 0 !important;
-  }
-  html:not(.print-pdf) .reveal .takeaways li{
-    display: grid !important;
-    grid-template-columns: 68px 1fr !important;
-    font-size: 46px !important;
-    margin: 0 0 34px 0 !important;
-    width: auto !important;
-  }
   html:not(.print-pdf) .reveal #title{
     justify-content: flex-start !important;
   }
@@ -813,7 +624,7 @@ html.print-pdf .reveal .speaker-notes-pdf{
     width: auto !important;
   }
   html:not(.print-pdf) .reveal .title-label{ font-size: 24px !important; margin: 0 0 30px 0 !important; }
-  html:not(.print-pdf) .reveal .title-main{ font-size: 92px !important; color: var(--ink) !important; line-height: 1.02 !important; }
+  html:not(.print-pdf) .reveal .title-main{ font-size: 72px !important; color: var(--ink) !important; line-height: 1.06 !important; }
   html:not(.print-pdf) .reveal .title-sub{ font-size: 40px !important; margin: 12px 0 0 0 !important; }
   html:not(.print-pdf) .reveal .title-author{ font-size: 29px !important; white-space: nowrap !important; }
   html:not(.print-pdf) .reveal .title-company{ font-size: 25px !important; color: var(--accent) !important; margin: 6px 0 0 0 !important; }
@@ -823,7 +634,6 @@ html.print-pdf .reveal .speaker-notes-pdf{
   section.invert,
   section.wash,
   .pattern,
-  .pattern.is-pick,
   .tier,
   .tier.is-pick,
   .compare th,
